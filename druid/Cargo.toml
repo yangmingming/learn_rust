@@ -1,0 +1,66 @@
+[package]
+name = "druid-demo"
+version = "0.1.0"
+edition = "2021"
+
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+repository = "https://github.com/linebender/druid"
+
+[dependencies]
+druid = "0.7.0"
+reqwest = { version = "0.11", features = ["blocking"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tokio = { version = "1", features = ["full"] }
+chrono = "0.4"
+
+
+[[bin]]
+name = "button"
+path = "button.rs"
+
+
+[[bin]]
+name = "input"
+path = "input.rs"
+
+[[bin]]
+name = "label"
+path = "label.rs"
+
+[[bin]]
+name = "radio"
+path = "radio.rs"
+
+[[bin]]
+name = "checkbox"
+path = "checkbox.rs"
+
+[[bin]]
+name = "slider"
+path = "slider.rs"
+
+[[bin]]
+name = "layout_flex"
+path = "layout_flex.rs"
+
+[[bin]]
+name = "layout_align"
+path = "layout_align.rs"
+
+[[bin]]
+name = "layout_padding"
+path = "layout_padding.rs"
+
+[[bin]]
+name = "layout"
+path = "layout.rs"
+
+[[bin]]
+name = "keyboard"
+path = "keyboard.rs"
+
+[[bin]]
+name = "controller_label_time"
+path = "controller_label_time.rs"
