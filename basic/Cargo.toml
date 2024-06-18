@@ -22,3 +22,11 @@ path = "while.rs"
 [[bin]]
 name = "println"
 path = "println.rs"
+
+[[bin]]
+name = "function"
+path = "function.rs"
+
+[[bin]]
+name = "sizeof"
+path = "sizeof.rs"
