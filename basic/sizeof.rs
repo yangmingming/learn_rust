@@ -54,12 +54,14 @@ fn main() {
     println!("size_of::<bool>() = {}", size_of::<bool>());
     println!("size_of::<String>() = {}", size_of::<String>());
     println!("size_of::<Ticket>() = {}", size_of::<Ticket>());
+    // println!("size_of::<str>() = {}", size_of::<str>());     // 编译异常
 
     // 引用
     println!("size_of::<&u8>() = {}", size_of::<&u8>());
     println!("size_of::<&mut u8>() = {}", size_of::<&mut u8>());
     println!("size_of::<&u16>() = {}", size_of::<&u16>());
     println!("size_of::<&String>() = {}", size_of::<&String>());
+    println!("size_of::<&str>() = {}", size_of::<&str>());
 
     // 内存对齐
     println!("size_of::<Stu1>() = {}", size_of::<Stu1>());  // 8 = 4(u32) + 1(u8) + 3(padding)

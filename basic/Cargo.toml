@@ -30,3 +30,19 @@ path = "function.rs"
 [[bin]]
 name = "sizeof"
 path = "sizeof.rs"
+
+[[bin]]
+name = "hashset"
+path = "hashset.rs"
+
+[[bin]]
+name = "hashmap"
+path = "hashmap.rs"
+
+[[bin]]
+name = "vec"
+path = "vec.rs"
+
+[[bin]]
+name = "linked_list"
+path = "linked_list.rs"
