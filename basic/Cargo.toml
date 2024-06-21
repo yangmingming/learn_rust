@@ -46,3 +46,7 @@ path = "vec.rs"
 [[bin]]
 name = "linked_list"
 path = "linked_list.rs"
+
+[[bin]]
+name = "enum"
+path = "enum.rs"

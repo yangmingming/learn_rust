@@ -1,0 +1,32 @@
+[package]
+name = "intermediate"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[[bin]]
+name = "from_into"
+path = "from_into.rs"
+
+[[bin]]
+name = "trait"
+path = "trait.rs"
+
+[[bin]]
+name = "add"
+path = "add.rs"
+
+[[bin]]
+name = "drop"
+path = "drop.rs"
+
+[[bin]]
+name = "auto_deref"
+path = "auto_deref.rs"
+
+[[bin]]
+name = "match"
+path = "match.rs"
