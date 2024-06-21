@@ -134,4 +134,38 @@ fn main() {
     } else {
         println!("An error occurred");
     }
+
+	// match 匹配枚举类型携带数据
+	// 方法1
+    match check_ticket("", "This is a description") {
+        Ok(_) => println!("Ticket is valid"),
+        Err(TicketError::TitleError(msg)) => println!("Title error: {}", msg),
+        Err(TicketError::DescriptionError(msg)) => println!("Description error: {}", msg),
+    }
+
+	// 方法2
+    match check_ticket("", "This is a description") {
+        Ok(_) => println!("Ticket is valid"),
+		Err(err) => match err {
+			TicketError::TitleError(msg) => println!("Title error: {}", msg),
+			TicketError::DescriptionError(msg) => println!("Description error: {}", msg),
+		}
+    }
+
+}
+
+enum TicketError {
+    TitleError(String),
+    DescriptionError(String),
+}
+
+// 使用 TicketError 枚举
+fn check_ticket(title: &str, description: &str) -> Result<(), TicketError> {
+    if title.is_empty() {
+        return Err(TicketError::TitleError("Title cannot be empty".to_string()));
+    }
+    if description.is_empty() {
+        return Err(TicketError::DescriptionError("Description cannot be empty".to_string()));
+    }
+    Ok(())
 }
