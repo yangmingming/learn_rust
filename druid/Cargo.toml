@@ -58,6 +58,10 @@ name = "layout"
 path = "layout.rs"
 
 [[bin]]
+name = "layout_loop"
+path = "layout_loop.rs"
+
+[[bin]]
 name = "keyboard"
 path = "keyboard.rs"
 
