@@ -72,8 +72,14 @@ struct LoggedEvent {
 impl LoggedEvent {
     fn try_from_event(event: &Event, number: usize) -> Option<Self> {
         let to_log = match event {
-            Event::MouseUp(mouse) => Some((EventType::MouseUp, Some(mouse.clone()), None)),
-            Event::MouseDown(mouse) => Some((EventType::MouseDown, Some(mouse.clone()), None)),
+            Event::MouseUp(mouse) => {
+                println!("{:?}", mouse.clone());
+                Some((EventType::MouseUp, Some(mouse.clone()), None))
+            }
+            Event::MouseDown(mouse) => {
+                println!("{:?}", mouse.clone());
+                Some((EventType::MouseDown, Some(mouse.clone()), None))
+            }
             Event::Wheel(mouse) => Some((EventType::Wheel, Some(mouse.clone()), None)),
             Event::KeyUp(key) => {
                 println!("{:?}", key.clone());
@@ -197,7 +203,7 @@ fn build_ui() -> impl Widget<AppData> {
         .lens(AppData::text)
         .controller(EventLogger {
             // 事件过滤
-            filter: |event| matches!(event, Event::KeyDown(_) | Event::KeyUp(_)),
+            filter: |event| matches!(event, Event::KeyDown(_) | Event::KeyUp(_) | Event::MouseUp(_) | Event::MouseDown(_)),
         });
 
     let label = Label::new(|data: &AppData, _env: &Env| {
